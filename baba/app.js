@@ -78,10 +78,12 @@ app.get ('/ajouter',(req,res)=>{
   console.log(err);
 })
 });
-app.get('/blogss',(req,res)=>{
-  blogs.find()
+app.get('/blogss/:id',(req,res)=>{
+  const id = req.params.id ;
+  const titre ="page de details";
+  blogs.findById(id)
   .then((result)=>{
-    res.send(result);
+    res.render('details',{titre:titre,blog :result});
   })
 
 .catch((err)=>{
@@ -89,8 +91,16 @@ app.get('/blogss',(req,res)=>{
 })
 })
 app.get('/url/:id',(req,res)=>{
-  blogs.findById
+  const id = req.params.id ;
+  const titre ="page de details";
+  blogs.findById(id)
+.then((result)=>{
+  res.render('details',{ titre : titre , blog:result});
 })
+.catch((err)=>{
+console.log(err);
+}) 
+});
 app.use('', (req,res)=>{
   let titre = 'error';
   res.render('404',{titre});

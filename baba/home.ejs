@@ -24,8 +24,9 @@
 
         <% if (blogs.length > 0) { %>
          <% blogs.forEach(blog=> { %>
+            <a href=" /blogss/<%= blog._id %>">
             
-        <div class=" container form-control  " id="two" >
+        <div class=" container form-control" id="two" >
             
             <h3><%= blog.nom %></h3> 
            <p> <%= blog.prix %> </p> 
