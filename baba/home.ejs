@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLI NODE- <%= titre %> </title>
+</head>
+<body>
+    <%- include("./partiels/header.ejs") %> 
+    <% const nom = 'DOSSOU SYDNEY '  %>
+   <center> <H1> ACCEUIL </H1> 
+   <p>  Bienvennue sur ma toute premiere appli web avec node🥳🥳🥳  
+        salut , <%= nom %> 😉
+    </p>
+    
+ 
+    
+        <h2> NOS PRODUITS &copy; </h2> </center>
+
+
+ <br/>
+ 
+
+        <% if (blogs.length > 0) { %>
+         <% blogs.forEach(blog=> { %>
+            
+        <div class=" container form-control  " id="two" >
+            
+            <h3><%= blog.nom %></h3> 
+           <p> <%= blog.prix %> </p> 
+            <%= blog.categorie %> 
+            
+            </div>
+    
+   
+     <% }) %>
+    <% } else { %>
+        <p> Vous n'avez poster aucun produit pour l'instant </p>
+     <% } %>
+
+ 
+    
+</body>
+</html>
+<style>
+   #two{border: 3px rgb(3, 33, 41) solid ;width: 200px ; height:115px ;margin-bottom:10px ; margin-left:100px; ; } 
+   .container{display:inline-block;}
+   h3{font-family: 'Times New Roman', Times, serif;font-style: italic;text-decoration-color: rgb(208, 146, 146) ;}
+</style>
